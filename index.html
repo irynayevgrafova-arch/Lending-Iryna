@@ -131,12 +131,153 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
             border: none;
+            white-space: nowrap;
         }
 
         .cta-button-header:hover {
             background: #e67e22;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(230, 126, 34, 0.35);
+        }
+
+        /* Navigation & Actions */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.25rem 0;
+            font-family: var(--font-body);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link-cta-mobile {
+            display: none;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        /* Hamburger button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-origin: left center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border-bottom: 1px solid rgba(212, 83, 126, 0.1);
+                flex-direction: column;
+                padding: var(--spacing-md) 0;
+                gap: var(--spacing-md);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+
+            .header-nav.active {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .nav-link {
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+                padding: var(--spacing-xs) 0;
+            }
+
+            .nav-link::after {
+                display: none; /* Hide hover line on mobile */
+            }
+
+            .nav-link-cta-mobile {
+                display: block;
+                color: var(--primary);
+                font-weight: 700;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            /* Hamburger transform to X */
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(2px, -2px);
+                background-color: var(--primary);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(2px, 2px);
+                background-color: var(--primary);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-button-header {
+                display: none; /* Hide header CTA on very small viewports, user can access via menu */
+            }
         }
 
         /* Hero Section */
@@ -1058,20 +1199,33 @@
                 <a href="https://iryna.life-navigator-xxi.com/" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--text-primary);">
                     <img alt="Iryna Life Navigator" src="img/logo.png" style="height: 44px; width: auto; display: block; border-radius: 4px;"/>
                     <div style="display: flex; flex-direction: column;">
-                        <span class="header-tagline">Ирина — ваш реабилитолог</span>
-                        <span class="header-tagline">здоровья и красоты</span>
+                        <span style="font-size: 1.15rem; font-weight: 700; line-height: 1.2; color: var(--primary);">Iryna Life Navigator</span>
+                        <span class="header-tagline">Ирина — ваш реабилитолог здоровья и красоты</span>
                     </div>
                 </a>
             </div>
-            <div>
-               
+            <nav class="header-nav" id="headerNav">
+                <a href="#variants" class="nav-link">Два варианта</a>
+                <a href="#results" class="nav-link">Результаты</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#videos" class="nav-link">Видео</a>
+                <a href="#cta" class="nav-link nav-link-cta-mobile">Связаться</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-button-header">Написать «Хочу»</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1></h1>✓ Красота и здоровье</h1>
+            <span class="hero-badge">✓ Красота и здоровье</span>
             <h1>Они идут по жизни <br><em>не рядом и не вместе</em><br>— одно вытекает из другого</h1>
             <p class="hero-subtitle">
                 И огромную роль в этом процессе играет вес. Потому что он влияет на уровень сахара в крови, 
@@ -1490,6 +1644,23 @@
 
         track.addEventListener('touchend', () => {
             isSwiping = false;
+        });
+
+        // ── Мобильное меню (Гамбургер) ──
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.getElementById('headerNav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            headerNav.classList.toggle('active');
+        });
+
+        // Закрывать меню при клике на любую ссылку
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                headerNav.classList.remove('active');
+            });
         });
 
         // Smooth scroll for anchor links
