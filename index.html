@@ -1226,13 +1226,15 @@
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">✓ Красота и здоровье</span>
-            <h1>Они идут по жизни <br><em>не рядом и не вместе</em><br>— одно вытекает из другого</h1>
+            <h1>Идут по жизни <br><em>не рядом и не вместе</em><br>— одно вытекает из другого</h1>
             <p class="hero-subtitle">
-                И огромную роль в этом процессе играет вес. Потому что он влияет на уровень сахара в крови, 
-                на давление и сосуды, на работу суставов. И от него зависит напрямую упругость, молодость и цвет кожи.
+                И огромную роль в этом процессе играет вес. Ведь <strong>лишний вес</strong> влияет на уровень сахара в крови, на давление, сосуды и работу суставов. 
+                В то же время <strong>красота и здоровье</strong> неразделимы: от правильного обмена веществ напрямую зависят 
+                <strong>упругость, молодость и здоровый цвет вашей кожи</strong>. Одно вытекает из другого: восстанавливая внутреннее здоровье, 
+                вы раскрываете свою истинную внешнюю красоту.
             </p>
             <div class="audio-wrap">
-                <button class="audio-btn" id="audioBtn">▶ Послушать</button>
+                <button class="audio-btn" id="audioBtn">▶ Послушать Ирину</button>
                 <audio id="prAudio" preload="none" src="audi/1031zv.ogg"></audio>
                 <div class="audio-progress-wrap">
                     <div class="audio-bar" id="audioBar">
@@ -1240,10 +1242,6 @@
                     </div>
                     <span class="audio-time" id="audioTime">0:00</span>
                 </div>
-            </div>
-            <div class="hero-cta">
-                <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-primary">Написать «Хочу»</a>
-                
             </div>
         </div>
     </section>
@@ -1722,7 +1720,7 @@
                 });
             } else {
                 prAudio.pause();
-                audioBtn.textContent = '▶ Послушать';
+                audioBtn.textContent = '▶ Послушать Ирину';
                 audioBtn.classList.remove('playing');
             }
         });
@@ -1740,7 +1738,7 @@
 
         prAudio.addEventListener('pause', () => {
             audioBtn.classList.remove('loading');
-            audioBtn.textContent = '▶ Послушать';
+            audioBtn.textContent = '▶ Послушать Ирину';
             audioBtn.classList.remove('playing');
         });
 
@@ -1766,7 +1764,7 @@
         });
 
         prAudio.addEventListener('ended', () => {
-            audioBtn.textContent = '▶ Послушать';
+            audioBtn.textContent = '▶ Послушать Ирину';
             audioBtn.classList.remove('playing');
             audioBtn.classList.remove('loading');
             audioFill.style.width = '0%';
