@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Снижение веса. Липолизная неделя — Iryna Life Navigator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colors - Premium Brand Health & Beauty Palette */
+            --primary: #D4537E; /* Brand Rose Pink */
+            --primary-light: #E77298;
+            --primary-dark: #A8345C;
+            --secondary: #1D9E75; /* Brand Health Teal */
+            --secondary-light: #2ADBB1;
+            --secondary-dark: #085041;
+            --accent: #F39C12; /* Golden Accent */
+            --accent-light: #F4D19B;
+            --dark: #2C2C2A; /* Elegant Charcoal/Warm Dark */
+            --dark-soft: #3D3D3A;
+            --light: #FFFDFB; /* Soft Warm White */
+            --light-pink: #FDF2F5; /* Delicate Pink Background */
+            --light-teal: #EBF9F5; /* Delicate Teal Background */
+            --light-beige: #FAF4EB; /* Soft Cream/Beige */
+            --text-primary: #2C2C2A;
+            --text-secondary: #5F5E5A;
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--text-primary);
+            padding: var(--spacing-sm) var(--spacing-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(212, 83, 126, 0.08);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-body);
+        }
+
+        .header-tagline {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #4a90e2;
+            letter-spacing: 0.2px;
+            display: block;
+            margin-top: 0.15rem;
+            opacity: 0.95;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover .header-tagline {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-tagline {
+                display: none;
+            }
+        }
+
+        .cta-button-header {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
+            border: none;
+        }
+
+        .cta-button-header:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fff8f0 0%, #fbeaf0 100%);
+            padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 83, 126, 0.15);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 83, 126, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        /* Custom Audio Player */
+        .audio-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(212, 83, 126, 0.2);
+            border-radius: 12px;
+            padding: 0.75rem 1.15rem;
+            margin: 1.5rem 0 2rem 0;
+            max-width: 440px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+        .audio-wrap:hover {
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary);
+        }
+        .audio-btn {
+            flex-shrink: 0;
+            padding: 0.6rem 1.3rem;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(212, 83, 126, 0.2);
+        }
+        .audio-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(212, 83, 126, 0.3);
+        }
+        .audio-btn.playing {
+            background: var(--accent) !important;
+            color: white !important;
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2) !important;
+        }
+        .audio-btn.playing:hover {
+            background: #d35400 !important;
+        }
+        .audio-btn.loading {
+            background: var(--text-secondary) !important;
+            cursor: wait;
+        }
+        .audio-progress-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .audio-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--light-beige);
+            border-radius: 3px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .audio-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+        .audio-time {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            min-width: 35px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+
+        .cta-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: white;
+        }
+
+        .section-header {
+            max-width: 1200px;
+            margin: 0 auto var(--spacing-lg);
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .benefit-card {
+            background: var(--light-beige);
+            padding: var(--spacing-lg);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            transform-origin: bottom;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 83, 126, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+
+        .benefit-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Pink benefits theme overrides */
+        .benefits-pink .benefit-card {
+            background: var(--light-pink);
+            border: 1px solid rgba(212, 83, 126, 0.12);
+        }
+        .benefits-pink .benefit-card::before {
+            background: var(--primary);
+        }
+        .benefits-pink .benefit-icon {
+            background: rgba(212, 83, 126, 0.1);
+            color: var(--primary);
+        }
+        .benefits-pink .benefit-title {
+            color: var(--primary-dark);
+        }
+
+        /* Teal benefits theme overrides */
+        .benefits-teal .benefit-card {
+            background: var(--light-teal);
+            border: 1px solid rgba(29, 158, 117, 0.12);
+        }
+        .benefits-teal .benefit-card::before {
+            background: var(--secondary);
+        }
+        .benefits-teal .benefit-icon {
+            background: rgba(29, 158, 117, 0.1);
+            color: var(--secondary);
+        }
+        .benefits-teal .benefit-title {
+            color: var(--secondary-dark);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--light);
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 20px;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: var(--spacing-md);
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--dark);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--primary);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-lg);
+            border-radius: 20px;
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-result {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: white;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--light-beige) 0%, white 100%);
+            padding: var(--spacing-lg);
+            border-radius: 25px;
+            border: 3px solid var(--accent);
+            position: relative;
+            box-shadow: var(--shadow-strong);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .pricing-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            margin: var(--spacing-md) 0;
+        }
+
+        .pricing-price {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .features-list li {
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .features-list-pink li {
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .features-list-pink li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: var(--spacing-sm);
+        }
+
+        .features-list-teal li {
+            padding: var(--spacing-sm) 0;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .features-list-teal li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 900;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: var(--spacing-sm);
+        }
+
+        .cta-secondary-brand {
+            display: block;
+            background: var(--secondary);
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-secondary-brand:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--light);
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: 15px;
+            margin-bottom: var(--spacing-sm);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: var(--spacing-sm);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        .cta-final-button {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 1.3rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-final-button:hover {
+            background: var(--accent-light);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Tablet */
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Custom Audio Player */
+        .audio-btn:hover {
+            background: var(--primary-light) !important;
+            transform: scale(1.02);
+        }
+        .audio-btn.playing {
+            background: var(--accent) !important;
+            color: var(--dark) !important;
+        }
+        .audio-btn.playing:hover {
+            background: var(--accent-light) !important;
+        }
+        
+        /* Gallery card animations */
+        .gallery-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: var(--shadow-strong) !important;
+        }
+        .gallery-card:hover img {
+            transform: scale(1.03) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="https://iryna.life-navigator-xxi.com/" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--text-primary);">
+                    <img alt="Iryna Life Navigator" src="img/logo.png" style="height: 44px; width: auto; display: block; border-radius: 4px;"/>
+                    <div style="display: flex; flex-direction: column;">
+                        <span style="font-size: 1.15rem; font-weight: 700; line-height: 1.2; color: var(--primary);">Iryna Life Navigator</span>
+                        <span class="header-tagline">Ирина — ваш реабилитолог здоровья и красоты</span>
+                    </div>
+                </a>
+            </div>
+            <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-button-header">Написать «Хочу»</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">✓ Красота и здоровье</span>
+            <h1>Они идут по жизни <br><em>не рядом и не вместе</em><br>— одно вытекает из другого</h1>
+            <p class="hero-subtitle">
+                И огромную роль в этом процессе играет вес. Потому что он влияет на уровень сахара в крови, 
+                на давление и сосуды, на работу суставов. И от него зависит напрямую упругость, молодость и цвет кожи.
+            </p>
+            <div class="audio-wrap">
+                <button class="audio-btn" id="audioBtn">▶ Послушать</button>
+                <audio id="prAudio" preload="none" src="audi/1031zv.ogg"></audio>
+                <div class="audio-progress-wrap">
+                    <div class="audio-bar" id="audioBar">
+                        <div class="audio-fill" id="audioFill"></div>
+                    </div>
+                    <span class="audio-time" id="audioTime">0:00</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-primary">Написать «Хочу»</a>
+                <a href="#variants" class="cta-secondary">Варианты восстановления</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">3–5 кг</span>
+                <span class="stat-label">Минус в весе и объёмах за 7 дней</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7 дней</span>
+                <span class="stat-label">Продолжительность липолиза в месяц</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Натуральное очищение и восстановление</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits: Вес влияет на всё -->
+    <section class="benefits benefits-pink">
+        <div class="section-header">
+            <h2 class="section-title">Вес влияет на всё</h2>
+            <p class="section-subtitle">
+                Лишний вес — это не просто эстетика, это здоровье всего вашего организма
+            </p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">✨</div>
+                <h3 class="benefit-title">Кожа и молодость</h3>
+                <p class="benefit-text">
+                    От веса напрямую зависит упругость, эластичность, цвет и молодость вашей кожи.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🩸</div>
+                <h3 class="benefit-title">Сахар в крови</h3>
+                <p class="benefit-text">
+                    Нормализация веса помогает стабилизировать уровень глюкозы и улучшить чувствительность к инсулину.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💙</div>
+                <h3 class="benefit-title">Давление и сосуды</h3>
+                <p class="benefit-text">
+                    Снижение веса разгружает сердечно-сосудистую систему, нормализуя артериальное давление.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🦵</div>
+                <h3 class="benefit-title">Работа суставов</h3>
+                <p class="benefit-text">
+                    Каждый потерянный килограмм снижает нагрузку на колени, позвоночник и тазобедренные суставы.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits: От чего зависит вес -->
+    <section class="benefits benefits-teal" style="background: var(--light-beige); padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg);">
+        <div class="section-header">
+            <h2 class="section-title">От чего зависит вес?</h2>
+            <p class="section-subtitle">
+                Для стабильного результата важно воздействовать на все ключевые факторы
+            </p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🥗</div>
+                <h3 class="benefit-title">Питание</h3>
+                <p class="benefit-text">
+                    Правильно составленный рацион без голодания запускает естественный липолиз.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">😴</div>
+                <h3 class="benefit-title">Сон</h3>
+                <p class="benefit-text">
+                    Полноценный сон регулирует гормоны аппетита (лептин и грелин) и ускоряет ночное расщепление жиров.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏃</div>
+                <h3 class="benefit-title">Движение</h3>
+                <p class="benefit-text">
+                    Умеренная активность поддерживает тонус мышц и разгоняет метаболизм.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🧘</div>
+                <h3 class="benefit-title">Нервная система</h3>
+                <p class="benefit-text">
+                    Снижение уровня стресса блокирует выработку кортизола, который мешает худеть.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Variants / Programs -->
+    <section class="pricing" id="variants">
+        <div class="section-header">
+            <h2 class="section-title">2 варианта восстановления веса</h2>
+            <p class="section-subtitle">
+                Выберите направление, которое лучше всего подходит под ваше текущее состояние
+            </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-lg); justify-content: center; max-width: 1100px; margin: 0 auto; padding: 0 var(--spacing-md);">
+            
+            <!-- Вариант 1 -->
+            <div class="pricing-card" style="margin: 0; flex: 1; min-width: 290px; max-width: 500px; border-color: var(--primary);">
+                <div class="pricing-badge" style="background: var(--primary); color: white;">Вариант 1</div>
+                <h3 class="pricing-title" style="margin-top: 1rem; font-size: 1.5rem; line-height: 1.3;">Для тех, у кого всё в порядке со здоровьем</h3>
+                
+                <div style="background: rgba(212, 83, 126, 0.08); border-left: 4px solid var(--primary); padding: 1.2rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem; font-size: 0.95rem; font-weight: 500; color: var(--primary-dark);">
+                    <strong>Неделя липолиза</strong> — расщепление жиров в ночное время.<br>
+                    Минус <strong>3–5 кг и объёмов за 7 дней.</strong>
+                </div>
+                
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Если здоровье в норме или есть небольшие изменения в работе организма, но есть лишний вес — этот вариант для вас.
+                </p>
+                
+                <ul class="features-list features-list-pink">
+                    <li>Готовое меню трёхразового питания на каждый день</li>
+                    <li>Поддержка консультантов 24/7</li>
+                    <li>Приятная ежеутренняя мотивация — минус в весе и объёмах</li>
+                    <li>Проходим 1 раз в месяц, 7 дней — никакого стресса, голода и длительных диет</li>
+                    <li>Если лишнего веса много — проходим столько месяцев, сколько нужно</li>
+                </ul>
+                
+                <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-primary" style="display: block; text-decoration: none; text-align: center;">Написать «Хочу»</a>
+            </div>
+
+            <!-- Вариант 2 -->
+            <div class="pricing-card" style="margin: 0; flex: 1; min-width: 290px; max-width: 500px; border-color: var(--secondary);">
+                <div class="pricing-badge" style="background: var(--secondary); color: white;">Вариант 2</div>
+                <h3 class="pricing-title" style="margin-top: 1rem; font-size: 1.5rem; line-height: 1.3; color: var(--secondary-dark);">Для тех, у кого есть вопросы со здоровьем</h3>
+                
+                <div style="background: rgba(29, 158, 117, 0.08); border-left: 4px solid var(--secondary); padding: 1.2rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem; font-size: 0.95rem; font-weight: 500; color: var(--secondary-dark);">
+                    <strong>Комплексное очищение</strong> — восстановление работы органов и одновременное снижение веса на <strong>4–5 кг.</strong>
+                </div>
+                
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Если есть и лишний вес, и нарушения в здоровье — начнём с причины, а не со следствия.
+                </p>
+                
+                <ul class="features-list features-list-teal">
+                    <li>Сначала убираем причины нарушений в вашем здоровье</li>
+                    <li>Проходим комплексное очищение организма</li>
+                    <li>После — при необходимости — переходим на липолизную неделю</li>
+                    <li>Полное сопровождение консультантов и специалиста на каждом этапе</li>
+                </ul>
+                
+                <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-secondary-brand" style="display: block; text-decoration: none; text-align: center;">Написать «Хочу»</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <h2 class="section-title">Как начать путь к результату</h2>
+            <p class="section-subtitle">
+                Простые и понятные шаги к здоровому и красивому телу
+            </p>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Напишите «Хочу»</h3>
+                <p class="step-description">
+                    Нажмите кнопку «Написать «Хочу»» на сайте, чтобы перейти в наш чат «Вес» для ознакомления и связи с Ириной.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Индивидуальный разбор</h3>
+                <p class="step-description">
+                    Ирина свяжется с вами, чтобы обсудить ваши цели, образ жизни и имеющиеся вопросы по состоянию здоровья.
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Выбор направления</h3>
+                <p class="step-description">
+                    В зависимости от вашего самочувствия мы выберем Липолизную неделю (для быстрого сброса 3-5 кг) или Комплексное очищение (при вопросах по здоровью).
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Сопровождение 24/7</h3>
+                <p class="step-description">
+                    Получайте готовое меню, ежедневную мотивацию, советы по питьевому режиму и полную поддержку специалистов на каждом этапе программы.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results (Результаты) -->
+    <section class="benefits" style="background: white;" id="results">
+        <div class="section-header">
+            <h2 class="section-title">Результаты участников</h2>
+            <p class="section-subtitle">
+                Реальные изменения веса и объемов за время прохождения программы
+            </p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md); max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md);">
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); transition: all 0.3s ease; background: var(--light-beige);" class="gallery-card">
+                <img alt="Результат 1" src="img/img01.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); transition: all 0.3s ease; background: var(--light-beige);" class="gallery-card">
+                <img alt="Результат 2" src="img/img02.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); transition: all 0.3s ease; background: var(--light-beige);" class="gallery-card">
+                <img alt="Результат 3" src="img/img03.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews (Отзывы) -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <h2 class="section-title" style="color: white;">Отзывы и впечатления</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">
+                Что говорят участники о легкости прохождения и своих результатах
+            </p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md); max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md);">
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);" class="gallery-card">
+                <img alt="Отзыв 9" src="img/ot09.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);" class="gallery-card">
+                <img alt="Отзыв 10" src="img/ot10.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);" class="gallery-card">
+                <img alt="Отзыв 11" src="img/ot11.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-medium); transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);" class="gallery-card">
+                <img alt="Отзыв 12" src="img/ot12.jpeg" style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="section-header">
+            <h2 class="section-title">Частые вопросы</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Подойдет ли мне программа, если у меня есть проблемы со здоровьем?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Да! Если у вас есть нарушения здоровья, мы рекомендуем Вариант 2 (Комплексное очищение). Мы начнём с выявления и устранения причин сбоев в работе организма, бережно восстановим работу органов и одновременно снизим вес под полным сопровождением специалиста.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Что такое липолизная неделя?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Это специальный 7-дневный курс, активирующий естественное расщепление жиров в ночное время. Вы получаете готовое меню трёхразового питания на каждый день и поддержку консультантов 24/7. Программа проходит без голода, стресса и изнурительных тренировок.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Как часто нужно проходить программу липолиза?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Липолизную неделю мы рекомендуем проходить 1 раз в месяц (в течение 7 дней). Если лишнего веса много, курс можно повторять ежемесячно до достижения желаемого веса и объемов.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Нужно ли готовать сложные блюда или покупать редкие продукты?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Нет, все рецепты в меню составлены из простых, привычных и доступных продуктов, которые продаются в любом магазине. Приготовление блюд занимает минимум времени и легко встраивается в обычный рабочий ритм.
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Как связаться с Ириной и начать участие?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Нажмите любую кнопку «Написать «Хочу»» на этом сайте. Вы будете перенаправлены в чат «Вес», где после ознакомления с вводными материалами напишете слово «Хочу». Ирина свяжется с вами, чтобы обсудить детали и подобрать оптимальный вариант курса.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="cta">
+        <div class="final-cta-content">
+            <h2>Приходите — будет легко, весело и результативно 🌿</h2>
+            <p>
+                Для ознакомления заходите в чат <strong>«Вес»</strong> — там короткие видео и отзывы.<br>
+                Напишите там <strong>«Хочу»</strong> — я свяжусь с вами, и вместе решим, какой вариант подходит именно вам.
+            </p>
+            <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-final-button">Написать «Хочу»</a>
+            <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">
+                Посмотрите общую информацию в коротких видео и отзывах перед тем, как написать
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" style="font-size: 1.05rem; margin-bottom: 0.5rem; opacity: 0.9; font-weight: 500;">
+                © 2026 Iryna Life Navigator. iryna.life-navigator-xxi.com
+            </p>
+            <p class="footer-text">
+                Все права защищены.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const wasActive = element.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!wasActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe benefit cards, steps, gallery cards, and pricing cards
+        document.querySelectorAll('.benefit-card, .step, .gallery-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // ── Аудиоплеер ──
+        const prAudio  = document.getElementById('prAudio');
+        const audioBtn = document.getElementById('audioBtn');
+        const audioFill = document.getElementById('audioFill');
+        const audioTime = document.getElementById('audioTime');
+        const audioBar  = document.getElementById('audioBar');
+
+        audioBtn.addEventListener('click', () => {
+            if (prAudio.paused) {
+                audioBtn.textContent = '⏳ Загрузка...';
+                audioBtn.classList.add('loading');
+                
+                prAudio.play().then(() => {
+                    audioBtn.classList.remove('loading');
+                    audioBtn.textContent = '⏸ Пауза';
+                    audioBtn.classList.add('playing');
+                }).catch(err => {
+                    console.error("Playback failed:", err);
+                    audioBtn.classList.remove('loading');
+                    audioBtn.textContent = '⚠ Ошибка';
+                    audioBtn.classList.remove('playing');
+                });
+            } else {
+                prAudio.pause();
+                audioBtn.textContent = '▶ Послушать';
+                audioBtn.classList.remove('playing');
+            }
+        });
+
+        prAudio.addEventListener('waiting', () => {
+            audioBtn.textContent = '⏳ Загрузка...';
+            audioBtn.classList.add('loading');
+        });
+
+        prAudio.addEventListener('playing', () => {
+            audioBtn.classList.remove('loading');
+            audioBtn.textContent = '⏸ Пауза';
+            audioBtn.classList.add('playing');
+        });
+
+        prAudio.addEventListener('pause', () => {
+            audioBtn.classList.remove('loading');
+            audioBtn.textContent = '▶ Послушать';
+            audioBtn.classList.remove('playing');
+        });
+
+        prAudio.addEventListener('error', (e) => {
+            console.error("Audio loading error:", e);
+            audioBtn.classList.remove('loading');
+            audioBtn.textContent = '⚠ Ошибка';
+            audioBtn.classList.remove('playing');
+        });
+
+        prAudio.addEventListener('timeupdate', () => {
+            if (!prAudio.duration || isNaN(prAudio.duration)) return;
+            audioFill.style.width = (prAudio.currentTime / prAudio.duration * 100) + '%';
+            const m = Math.floor(prAudio.currentTime / 60);
+            const s = Math.floor(prAudio.currentTime % 60).toString().padStart(2, '0');
+            audioTime.textContent = m + ':' + s;
+        });
+
+        audioBar.addEventListener('click', e => {
+            if (!prAudio.duration || isNaN(prAudio.duration)) return;
+            const rect = audioBar.getBoundingClientRect();
+            prAudio.currentTime = ((e.clientX - rect.left) / rect.width) * prAudio.duration;
+        });
+
+        prAudio.addEventListener('ended', () => {
+            audioBtn.textContent = '▶ Послушать';
+            audioBtn.classList.remove('playing');
+            audioBtn.classList.remove('loading');
+            audioFill.style.width = '0%';
+            audioTime.textContent = '0:00';
+        });
+    </script>
+</body>
+</html>
