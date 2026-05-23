@@ -746,61 +746,134 @@
             box-shadow: var(--shadow-strong);
         }
 
-        /* FAQ */
-        .faq {
-            background: var(--light);
+        /* Video Carousel Section */
+        .video-carousel-section {
+            background: var(--light-beige);
             padding: var(--spacing-xl) var(--spacing-md);
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 83, 126, 0.1);
         }
 
-        .faq-container {
-            max-width: 800px;
+        .carousel-outer {
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
         }
 
-        .faq-item {
+        .carousel-window {
+            overflow: hidden;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-strong);
             background: white;
             padding: var(--spacing-md);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+            padding: 0 var(--spacing-xs);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
             border-radius: 15px;
-            margin-bottom: var(--spacing-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .slide-caption {
+            margin-top: var(--spacing-sm);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(212, 83, 126, 0.2);
+            color: var(--primary);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 8px 25px rgba(212, 83, 126, 0.3);
+        }
+
+        .carousel-nav-btn.prev {
+            left: -25px;
+        }
+
+        .carousel-nav-btn.next {
+            right: -25px;
+        }
+
+        @media (max-width: 968px) {
+            .carousel-nav-btn.prev { left: 10px; }
+            .carousel-nav-btn.next { right: 10px; }
+        }
+
+        /* Carousel Indicators (Dots) */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: var(--spacing-md);
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(212, 83, 126, 0.2);
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-soft);
         }
 
-        .faq-item:hover {
-            box-shadow: var(--shadow-medium);
-        }
-
-        .faq-question {
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            color: var(--accent);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            margin-top: var(--spacing-sm);
+        .carousel-dot.active {
+            background: var(--primary);
+            width: 24px;
+            border-radius: 5px;
         }
 
         /* CTA Section */
@@ -985,19 +1058,20 @@
                 <a href="https://iryna.life-navigator-xxi.com/" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--text-primary);">
                     <img alt="Iryna Life Navigator" src="img/logo.png" style="height: 44px; width: auto; display: block; border-radius: 4px;"/>
                     <div style="display: flex; flex-direction: column;">
-                        <span style="font-size: 1.15rem; font-weight: 700; line-height: 1.2; color: var(--primary);">Iryna Life Navigator</span>
-                        <span class="header-tagline">Ирина — ваш реабилитолог здоровья и красоты</span>
+                        <span class="header-tagline">Ирина — ваш реабилитолог</span>
+                        <span class="header-tagline">здоровья и красоты</span>
                     </div>
                 </a>
             </div>
-            <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-button-header">Написать «Хочу»</a>
+            <div>
+               
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">✓ Красота и здоровье</span>
+            <h1></h1>✓ Красота и здоровье</h1>
             <h1>Они идут по жизни <br><em>не рядом и не вместе</em><br>— одно вытекает из другого</h1>
             <p class="hero-subtitle">
                 И огромную роль в этом процессе играет вес. Потому что он влияет на уровень сахара в крови, 
@@ -1015,7 +1089,7 @@
             </div>
             <div class="hero-cta">
                 <a href="https://iryna.life-navigator-xxi.com/ru/#contactForm" class="cta-primary">Написать «Хочу»</a>
-                <a href="#variants" class="cta-secondary">Варианты восстановления</a>
+                
             </div>
         </div>
     </section>
@@ -1121,7 +1195,7 @@
     <!-- Variants / Programs -->
     <section class="pricing" id="variants">
         <div class="section-header">
-            <h2 class="section-title">2 варианта восстановления веса</h2>
+            <h2 class="section-title">Два варианта снижения веса</h2>
             <p class="section-subtitle">
                 Выберите направление, которое лучше всего подходит под ваше текущее состояние
             </p>
@@ -1264,57 +1338,45 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
+    <!-- Video Carousel Section (Вместо Частых вопросов) -->
+    <section class="video-carousel-section" id="videos">
         <div class="section-header">
-            <h2 class="section-title">Частые вопросы</h2>
+            <h2 class="section-title">Видео о программе</h2>
+            <p class="section-subtitle">
+                Посмотрите короткие обзоры, полезные советы и результаты участников в удобной карусели
+            </p>
         </div>
-        <div class="faq-container">
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>Подойдет ли мне программа, если у меня есть проблемы со здоровьем?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    Да! Если у вас есть нарушения здоровья, мы рекомендуем Вариант 2 (Комплексное очищение). Мы начнём с выявления и устранения причин сбоев в работе организма, бережно восстановим работу органов и одновременно снизим вес под полным сопровождением специалиста.
-                </div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>Что такое липолизная неделя?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    Это специальный 7-дневный курс, активирующий естественное расщепление жиров в ночное время. Вы получаете готовое меню трёхразового питания на каждый день и поддержку консультантов 24/7. Программа проходит без голода, стресса и изнурительных тренировок.
-                </div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>Как часто нужно проходить программу липолиза?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    Липолизную неделю мы рекомендуем проходить 1 раз в месяц (в течение 7 дней). Если лишнего веса много, курс можно повторять ежемесячно до достижения желаемого веса и объемов.
-                </div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>Нужно ли готовать сложные блюда или покупать редкие продукты?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    Нет, все рецепты в меню составлены из простых, привычных и доступных продуктов, которые продаются в любом магазине. Приготовление блюд занимает минимум времени и легко встраивается в обычный рабочий ритм.
+        <div class="carousel-outer">
+            <button class="carousel-nav-btn prev" id="carouselPrev" aria-label="Предыдущее видео">‹</button>
+            <button class="carousel-nav-btn next" id="carouselNext" aria-label="Следующее видео">›</button>
+            
+            <div class="carousel-window">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Видео 1 -->
+                    <div class="carousel-slide">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/UD69oi1DqVI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="slide-caption">Секреты Липолиза и Здорового Снижения Веса</h3>
+                    </div>
+                    <!-- Видео 2 -->
+                    <div class="carousel-slide">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/UD69oi1DqVI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="slide-caption">Как проходит Неделя Липолиза</h3>
+                    </div>
+                    <!-- Видео 3 -->
+                    <div class="carousel-slide">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/UD69oi1DqVI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="slide-caption">Комплексное Очищение и Восстановление Организма</h3>
+                    </div>
                 </div>
             </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span>Как связаться с Ириной и начать участие?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    Нажмите любую кнопку «Написать «Хочу»» на этом сайте. Вы будете перенаправлены в чат «Вес», где после ознакомления с вводными материалами напишете слово «Хочу». Ирина свяжется с вами, чтобы обсудить детали и подобрать оптимальный вариант курса.
-                </div>
-            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
 
@@ -1346,20 +1408,89 @@
     </footer>
 
     <script>
-        // FAQ Toggle
-        function toggleFaq(element) {
-            const wasActive = element.classList.contains('active');
-            
-            // Close all FAQ items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
+        // ── Видео-карусель ──
+        const track = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+        const dotsContainer = document.getElementById('carouselDots');
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+
+        // Создаем точки навигации
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
             });
-            
-            // Open clicked item if it wasn't active
-            if (!wasActive) {
-                element.classList.add('active');
-            }
         }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Зацикливание
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slides.length - 1; // Зацикливание
+            }
+            updateCarousel();
+        });
+
+        // Поддержка свайпов на мобильных устройствах
+        let startX = 0;
+        let isSwiping = false;
+
+        track.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+        }, { passive: true });
+
+        track.addEventListener('touchmove', e => {
+            if (!isSwiping) return;
+            const diffX = e.touches[0].clientX - startX;
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = slides.length - 1;
+                    }
+                } else {
+                    if (currentIndex < slides.length - 1) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
+                }
+                updateCarousel();
+                isSwiping = false;
+            }
+        }, { passive: true });
+
+        track.addEventListener('touchend', () => {
+            isSwiping = false;
+        });
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
