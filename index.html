@@ -1696,7 +1696,7 @@
                 <!-- Audio Player -->
                 <div class="audio-wrap">
                     <button class="audio-btn" id="audioBtn">▶ Послушать</button>
-                    <audio id="prAudio" preload="none" src="audi/lipolysisweek.ogg"></audio>
+                    <audio id="prAudio" preload="none" src="audi/lipolysisweek.mp3"></audio>
                     <div class="audio-progress-wrap">
                         <div class="audio-bar" id="audioBar">
                             <div class="audio-fill" id="audioFill"></div>
@@ -2284,73 +2284,77 @@
         const audioTime = document.getElementById('audioTime');
         const audioBar = document.getElementById('audioBar');
 
-        audioBtn.addEventListener('click', () => {
-            if (prAudio.paused) {
+        if (prAudio && audioBtn) {
+            audioBtn.addEventListener('click', () => {
+                if (prAudio.paused) {
+                    audioBtn.textContent = '⏳ Загрузка...';
+                    audioBtn.classList.add('loading');
+
+                    prAudio.play().then(() => {
+                        audioBtn.classList.remove('loading');
+                        audioBtn.textContent = '⏸ Пауза';
+                        audioBtn.classList.add('playing');
+                    }).catch(err => {
+                        console.error("Playback failed:", err);
+                        audioBtn.classList.remove('loading');
+                        audioBtn.textContent = '⚠ Ошибка';
+                        audioBtn.classList.remove('playing');
+                    });
+                } else {
+                    prAudio.pause();
+                    audioBtn.textContent = '▶ Послушать';
+                    audioBtn.classList.remove('playing');
+                }
+            });
+
+            prAudio.addEventListener('waiting', () => {
                 audioBtn.textContent = '⏳ Загрузка...';
                 audioBtn.classList.add('loading');
+            });
 
-                prAudio.play().then(() => {
-                    audioBtn.classList.remove('loading');
-                    audioBtn.textContent = '⏸ Пауза';
-                    audioBtn.classList.add('playing');
-                }).catch(err => {
-                    console.error("Playback failed:", err);
-                    audioBtn.classList.remove('loading');
-                    audioBtn.textContent = '⚠ Ошибка';
-                    audioBtn.classList.remove('playing');
-                });
-            } else {
-                prAudio.pause();
+            prAudio.addEventListener('playing', () => {
+                audioBtn.classList.remove('loading');
+                audioBtn.textContent = '⏸ Пауза';
+                audioBtn.classList.add('playing');
+            });
+
+            prAudio.addEventListener('pause', () => {
+                audioBtn.classList.remove('loading');
                 audioBtn.textContent = '▶ Послушать';
                 audioBtn.classList.remove('playing');
+            });
+
+            prAudio.addEventListener('error', (e) => {
+                console.error("Audio loading error:", e);
+                audioBtn.classList.remove('loading');
+                audioBtn.textContent = '⚠ Ошибка';
+                audioBtn.classList.remove('playing');
+            });
+
+            prAudio.addEventListener('timeupdate', () => {
+                if (!prAudio.duration || isNaN(prAudio.duration)) return;
+                audioFill.style.width = (prAudio.currentTime / prAudio.duration * 100) + '%';
+                const m = Math.floor(prAudio.currentTime / 60);
+                const s = Math.floor(prAudio.currentTime % 60).toString().padStart(2, '0');
+                audioTime.textContent = m + ':' + s;
+            });
+
+            if (audioBar) {
+                audioBar.addEventListener('click', e => {
+                    if (!prAudio.duration || isNaN(prAudio.duration)) return;
+                    const rect = audioBar.getBoundingClientRect();
+                    prAudio.currentTime = ((e.clientX - rect.left) / rect.width) * prAudio.duration;
+                });
             }
-        });
 
-        prAudio.addEventListener('waiting', () => {
-            audioBtn.textContent = '⏳ Загрузка...';
-            audioBtn.classList.add('loading');
-        });
-
-        prAudio.addEventListener('playing', () => {
-            audioBtn.classList.remove('loading');
-            audioBtn.textContent = '⏸ Пауза';
-            audioBtn.classList.add('playing');
-        });
-
-        prAudio.addEventListener('pause', () => {
-            audioBtn.classList.remove('loading');
-            audioBtn.textContent = '▶ Послушать';
-            audioBtn.classList.remove('playing');
-        });
-
-        prAudio.addEventListener('error', (e) => {
-            console.error("Audio loading error:", e);
-            audioBtn.classList.remove('loading');
-            audioBtn.textContent = '⚠ Ошибка';
-            audioBtn.classList.remove('playing');
-        });
-
-        prAudio.addEventListener('timeupdate', () => {
-            if (!prAudio.duration || isNaN(prAudio.duration)) return;
-            audioFill.style.width = (prAudio.currentTime / prAudio.duration * 100) + '%';
-            const m = Math.floor(prAudio.currentTime / 60);
-            const s = Math.floor(prAudio.currentTime % 60).toString().padStart(2, '0');
-            audioTime.textContent = m + ':' + s;
-        });
-
-        audioBar.addEventListener('click', e => {
-            if (!prAudio.duration || isNaN(prAudio.duration)) return;
-            const rect = audioBar.getBoundingClientRect();
-            prAudio.currentTime = ((e.clientX - rect.left) / rect.width) * prAudio.duration;
-        });
-
-        prAudio.addEventListener('ended', () => {
-            audioBtn.textContent = '▶ Послушать';
-            audioBtn.classList.remove('playing');
-            audioBtn.classList.remove('loading');
-            audioFill.style.width = '0%';
-            audioTime.textContent = '0:00';
-        });
+            prAudio.addEventListener('ended', () => {
+                audioBtn.textContent = '▶ Послушать';
+                audioBtn.classList.remove('playing');
+                audioBtn.classList.remove('loading');
+                audioFill.style.width = '0%';
+                audioTime.textContent = '0:00';
+            });
+        }
 
         // ── Инициализация маски ввода телефона с флагами стран ──
         const phoneInput = document.getElementById('phone');
