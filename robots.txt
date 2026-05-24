@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lipolysisweek.life-navigator-xxi.com/sitemap.xml
